@@ -22,6 +22,9 @@ The behavior is like::
     parser.add_argument('-k', '--kick-off')
     parser.parse_args()
 
+**Nothing** to import in the script!!
+``autoarg`` can *automatically* understand the output of ``--help`` option,
+so *automatically* supports all script which use argparse.
 
 Installation
 ============
