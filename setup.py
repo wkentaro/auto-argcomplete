@@ -49,7 +49,7 @@ def get_data_files():
     loc = {'bash': get_completion_install_location(shell='bash'),
            'zsh': get_completion_install_location(shell='zsh')}
     files = {'bash': [],
-             'zsh': ['completion/_python']}
+             'zsh': ['completion/_autoarg']}
     data_files.append((loc['bash'], files['bash']))
     data_files.append((loc['zsh'], files['zsh']))
     return data_files
