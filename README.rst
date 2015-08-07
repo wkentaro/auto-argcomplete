@@ -12,7 +12,7 @@ The behavior is like::
     --dry-run   --help      --kick-off  --module
 
 
-``simple_script.py`` is
+``example/simple_script.py`` is
 
 .. code-block:: python
 
