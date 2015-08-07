@@ -37,3 +37,10 @@ Installation
 .. code-block:: sh
 
     $ pip install autoarg
+
+
+License
+=======
+| Copyright (C) 2015 Kentaro Wada
+| Released under the MIT license
+| http://opensource.org/licenses/mit-license.php
