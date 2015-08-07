@@ -9,17 +9,18 @@ import subprocess
 import platform
 from setuptools import setup, find_packages
 
+this_dir = os.path.dirname(os.path.abspath(__file__))
+
 
 def get_version():
-    this_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.insert(0, this_dir)
     from autoarg.version import __version__
     return __version__
 
 
 def get_install_requires():
-    # Grab requirements.
-    with open('requirements.txt') as f:
+    req_file = os.path.join(this_dir, 'requirements.txt')
+    with open(req_file) as f:
         required = f.readlines()
     return required
 
