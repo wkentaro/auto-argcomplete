@@ -12,7 +12,7 @@ The behavior is like::
     --dry-run   --help      --kick-off  --module
 
 
-`simple_script.py` is::
+``simple_script.py`` is::
 
     import argparse
 
