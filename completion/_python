@@ -1,0 +1,11 @@
+#compdef python
+
+_python () {
+  local -a reply
+  if [ ${CURRENT} = 2 ]; then
+    reply=(`ls`)
+  else
+    reply=(`autoarg ${=${(s: :)words}[2]}`)
+  fi
+  _describe -t python_completion 'python_completion' reply
+}
