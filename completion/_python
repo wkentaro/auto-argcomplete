@@ -1,0 +1,14 @@
+#compdef python
+
+_python () {
+  local -a reply
+  local ret=1
+
+  if [ $CURRENT -eq 2 ]; then
+    reply=( $(ls ${words[1]} 2>/dev/null || ls) )
+    _files && ret=0
+  else
+    reply=( $(autoarg ${words[2]}) )
+    _describe -t reply "options" reply
+  fi
+}
