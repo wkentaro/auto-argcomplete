@@ -25,7 +25,8 @@ The behavior is like::
     parser.parse_args()
 
 
-**Nothing** to import in the script!!
+**Nothing** to import in the script:smile:
+
 ``autoarg`` can *automatically* understand the output of ``--help`` option,
 so *automatically* supports all script which use argparse.
 
