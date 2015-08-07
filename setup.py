@@ -63,11 +63,19 @@ if sys.argv[-1] == 'publish':
         subprocess.check_call(cmd, shell=True)
     sys.exit(0)
 
+long_desciption = """\
+autoarg is automatic shell completion generator
+for script which uses argparse.
+autoarg can automatically understand the output of --help option,
+so automatically supports all script which use argparse.
+"""
+
 setup(
     name='autoarg',
     version=get_version(),
     packages=find_packages(),
-    description='auto args completion',
+    description='Auto argument completion for script with argparse.',
+    long_desciption=long_desciption,
     author='Kentaro Wada',
     author_email='www.kentaro.wada@gmail.com',
     url='http://github.com/wkentaro/autoarg',
