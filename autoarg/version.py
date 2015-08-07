@@ -1,5 +1,4 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .cli import *
-from .version import *
+__version__ = '0.2'

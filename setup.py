@@ -11,7 +11,10 @@ from setuptools import setup, find_packages
 
 
 def get_version():
-    return '0.1'
+    this_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, this_dir)
+    from autoarg.version import __version__
+    return __version__
 
 
 def get_install_requires():
