@@ -3,7 +3,6 @@
 
 import argparse
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument('-m', '--module')
 parser.add_argument('-n', '--dry-run')
