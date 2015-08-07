@@ -5,10 +5,10 @@ _python () {
   local ret=1
 
   if [ $CURRENT -eq 2 ]; then
-    reply=( $(ls ${words[1]} 2>/dev/null || ls) )
     _files && ret=0
   else
     reply=( $(autoarg ${words[2]}) )
-    _describe -t reply "options" reply
+    _describe -t reply "options" reply && ret=0
   fi
 }
+compdef _python python
