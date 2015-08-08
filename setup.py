@@ -13,7 +13,7 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 
 def get_version():
     sys.path.insert(0, this_dir)
-    from auto_argcomplete.version import __version__
+    from auto_argcomplete.__version__ import __version__
     return __version__
 
 
@@ -81,8 +81,8 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX',
         'Topic :: Internet :: WWW/HTTP',
-        ],
+    ],
     entry_points={'console_scripts':
         ['auto_argcomplete=auto_argcomplete.cli:main']},
     data_files=get_data_files(),
-    )
+)
