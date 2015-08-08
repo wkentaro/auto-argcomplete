@@ -63,7 +63,7 @@ if sys.argv[-1] == 'publish':
         subprocess.check_call(cmd, shell=True)
     sys.exit(0)
 
-long_desciption = """\
+long_description = """\
 auto-argcomplete is automatic shell completion generator
 for script which uses argparse.
 auto-argcomplete can automatically understand the output of --help option,
@@ -75,7 +75,7 @@ setup(
     version=get_version(),
     packages=find_packages(),
     description='Auto argument completion for script with argparse.',
-    long_desciption=long_desciption,
+    long_description=long_description,
     author='Kentaro Wada',
     author_email='www.kentaro.wada@gmail.com',
     url='http://github.com/wkentaro/auto-argcomplete',
