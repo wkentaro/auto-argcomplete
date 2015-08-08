@@ -7,7 +7,7 @@ _python () {
   if [ $CURRENT -eq 2 ]; then
     _files && ret=0
   else
-    reply=( $(autoarg ${words[2]}) )
+    reply=( $(auto_argcomplete ${words[2]}) )
     _describe -t reply "options" reply && ret=0
   fi
 }

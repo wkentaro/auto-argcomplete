@@ -13,7 +13,7 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 
 def get_version():
     sys.path.insert(0, this_dir)
-    from autoarg.version import __version__
+    from auto_argcomplete.version import __version__
     return __version__
 
 
@@ -47,8 +47,8 @@ def get_data_files():
     data_files = []
     loc = {'bash': get_completion_install_location(shell='bash'),
            'zsh': get_completion_install_location(shell='zsh')}
-    files = {'bash': ['completion/autoarg-completion.bash'],
-             'zsh': ['completion/_autoarg']}
+    files = {'bash': ['completion/auto_argcomplete-completion.bash'],
+             'zsh': ['completion/_auto_argcomplete']}
     data_files.append((loc['bash'], files['bash']))
     data_files.append((loc['zsh'], files['zsh']))
     return data_files
@@ -89,6 +89,7 @@ setup(
         'Operating System :: POSIX',
         'Topic :: Internet :: WWW/HTTP',
         ],
-    entry_points={'console_scripts': ['autoarg=autoarg.cli:main']},
+    entry_points={'console_scripts':
+        ['auto_argcomplete=auto_argcomplete.cli:main']},
     data_files=get_data_files(),
     )
