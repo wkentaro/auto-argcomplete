@@ -17,13 +17,6 @@ def get_version():
     return __version__
 
 
-def get_install_requires():
-    req_file = os.path.join(this_dir, 'requirements.txt')
-    with open(req_file) as f:
-        required = f.readlines()
-    return required
-
-
 def get_data_files():
 
     def get_completion_install_location(shell):
@@ -72,7 +65,7 @@ setup(
     author='Kentaro Wada',
     author_email='www.kentaro.wada@gmail.com',
     url='http://github.com/wkentaro/auto-argcomplete',
-    install_requires=get_install_requires(),
+    install_requires=open('requirements.txt').read(),
     license='MIT',
     keywords='utility',
     classifiers=[
