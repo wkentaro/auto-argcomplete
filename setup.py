@@ -64,21 +64,21 @@ if sys.argv[-1] == 'publish':
     sys.exit(0)
 
 long_desciption = """\
-autoarg is automatic shell completion generator
+auto-argcomplete is automatic shell completion generator
 for script which uses argparse.
-autoarg can automatically understand the output of --help option,
+auto-argcomplete can automatically understand the output of --help option,
 so automatically supports all script which use argparse.
 """
 
 setup(
-    name='autoarg',
+    name='auto-argcomplete',
     version=get_version(),
     packages=find_packages(),
     description='Auto argument completion for script with argparse.',
     long_desciption=long_desciption,
     author='Kentaro Wada',
     author_email='www.kentaro.wada@gmail.com',
-    url='http://github.com/wkentaro/autoarg',
+    url='http://github.com/wkentaro/auto-argcomplete',
     install_requires=get_install_requires(),
     license='MIT',
     keywords='utility',

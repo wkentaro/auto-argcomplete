@@ -1,8 +1,8 @@
-===========
-``autoarg``
-===========
+====================
+``auto-argcomplete``
+====================
 
-``autoarg`` is automatic shell completion generator for script
+``auto-argcomplete`` is automatic shell completion generator for script
 which uses argparse.
 
 The behavior is like::
@@ -27,7 +27,7 @@ The behavior is like::
 
 **Nothing** to import in the script! :smile:
 
-``autoarg`` can *automatically* understand the output of ``--help`` option,
+``auto-argcomplete`` can *automatically* understand the output of ``--help`` option,
 so *automatically* supports all script which use argparse.
 
 
@@ -36,7 +36,7 @@ Installation
 
 .. code-block:: sh
 
-    $ pip install autoarg
+    $ pip install auto-argcomplete
 
 
 License
