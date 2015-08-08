@@ -3,5 +3,6 @@
 
 import auto_argcomplete
 
+
 if __name__ == '__main__':
     auto_argcomplete.cli.main()
