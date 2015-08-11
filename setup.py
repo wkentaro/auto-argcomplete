@@ -65,7 +65,7 @@ setup(
     author='Kentaro Wada',
     author_email='www.kentaro.wada@gmail.com',
     url='http://github.com/wkentaro/auto-argcomplete',
-    install_requires=open('requirements.txt').read(),
+    install_requires=open('requirements.txt').readlines(),
     license='MIT',
     keywords='utility',
     classifiers=[
