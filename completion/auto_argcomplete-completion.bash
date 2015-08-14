@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
-
-_python () {
+_auto_argcomplete () {
+  local files
   if (( COMP_CWORD == 1 )); then
-    COMPREPLY=( $(compgen -f -- ${COMP_WORDS[COMP_CWORD]}) )
+    files=$(compgen -f -- ${COMP_WORDS[COMP_CWORD]})
+    COMPREPLY=( $(echo $files | xargs -n1 | grep '\.py$') )
   else
     COMPREPLY=( $(auto_argcomplete ${COMP_WORDS[1]}) )
   fi
 }
-complete -F _python -o filenames python
+complete -F _auto_argcomplete -o filenames python

@@ -1,16 +1,22 @@
 #compdef python
 
+autoload +X _python
+
 _auto_argcomplete_python () {
   local -a reply
   local ret=1
 
   if [ $CURRENT -eq 2 ]; then
     _python
-  elif [ "`basename ${words[2]}`" = "setup.py" ]; then
+  elif [ "${words[2]}" = "setup.py" ]; then
     _python
   else
     reply=( $(auto_argcomplete ${words[2]}) )
-    _describe -t reply "options" reply && ret=0
+    if [ ${#reply} -eq 0 ]; then
+      _python
+    else
+      _describe -t reply "options" reply && ret=0
+    fi
   fi
 }
-compdef _auto_argcomplete_python python
+_auto_argcomplete_python
