@@ -3,19 +3,20 @@
 autoload +X _python
 
 _auto_argcomplete_python () {
-  local -a reply
-  local ret=1
+  local -a options
+  local output ret=1
 
-  if [ $CURRENT -eq 2 ]; then
+  if [[ $CURRENT -eq 2 ]]; then
     _python
   elif [ "${words[2]}" = "setup.py" ]; then
     _python
   else
-    reply=( $(auto_argcomplete ${words[2]}) )
-    if [ ${#reply} -eq 0 ]; then
+    output=$(auto_argcomplete ${words[2]} 2>/dev/null)
+    eval "options=($output)"  # for completion with description
+    if [ ${#options} -eq 0 ]; then
       _python
     else
-      _describe -t reply "options" reply && ret=0
+      _describe 'values' options && ret=0
     fi
   fi
 }

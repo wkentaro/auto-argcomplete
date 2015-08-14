@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 import os
 import sys
 import re
@@ -34,10 +35,15 @@ def main():
     doc, stderr = proc.communicate()
     args = parse_defaults(doc, section_name='optional arguments:')
 
+    opt_descs = []
     for arg in args:
-        opt = ''
         if arg.long:
             opt = arg.long
         elif arg.short:
             opt = arg.short
-        print(opt)
+        desc = arg.description
+        if desc:
+            opt_descs.append("'{opt}:{desc}'".format(opt=opt, desc=desc))
+        else:
+            opt_descs.append("'{opt}'".format(opt=opt))
+    print(' '.join(opt_descs))
