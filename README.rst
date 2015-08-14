@@ -11,6 +11,13 @@ The behavior is like::
     $ python example/simple_script.py --
     --dry-run   --help      --kick-off  --module
 
+If you're using zsh::
+
+    % python example/simple_script.py --
+    --dry-run   -- display what to do
+    --help      -- show this help message and exit
+    --module    -- specify module name
+    --kick-off
 
 ``example/simple_script.py`` is:
 
@@ -19,8 +26,8 @@ The behavior is like::
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--module')
-    parser.add_argument('-n', '--dry-run')
+    parser.add_argument('-m', '--module', help='specify module name')
+    parser.add_argument('-n', '--dry-run', help='display what to do')
     parser.add_argument('-k', '--kick-off')
     parser.parse_args()
 
