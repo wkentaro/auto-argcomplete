@@ -8,7 +8,7 @@ import re
 import subprocess
 from subprocess import Popen, PIPE
 
-from .fancy_docopt import parse_defaults
+from .packages.docopt import parse_defaults
 
 
 def main():
