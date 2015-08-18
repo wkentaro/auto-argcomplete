@@ -8,14 +8,6 @@ import subprocess
 import platform
 from setuptools import setup, find_packages
 
-this_dir = os.path.dirname(os.path.abspath(__file__))
-
-
-def get_version():
-    sys.path.insert(0, this_dir)
-    from auto_argcomplete.__version__ import __version__
-    return __version__
-
 
 def get_data_files():
 
@@ -55,14 +47,14 @@ def get_data_files():
 if sys.argv[-1] == 'publish':
     for cmd in [
             'python setup.py register sdist upload',
-            'git tag {}'.format(get_version()),
+            'git tag {}'.format(__import__('auto_argcomplete').__version__),
             'git push origin master --tag']:
         subprocess.check_call(cmd, shell=True)
     sys.exit(0)
 
 setup(
     name='auto-argcomplete',
-    version=get_version(),
+    version=__import__('auto_argcomplete').__version__,
     packages=find_packages(),
     description='Auto argument completion for script with argparse.',
     long_description=open('README.rst').read(),
