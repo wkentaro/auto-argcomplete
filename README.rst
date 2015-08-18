@@ -46,6 +46,14 @@ Installation
     $ pip install auto-argcomplete
 
 
+Test
+====
+
+.. code-block:: sh
+
+    $ nosetests -v auto_argcomplete
+
+
 License
 =======
 | Copyright (C) 2015 Kentaro Wada
