@@ -1,6 +1,7 @@
 ====================
 ``auto-argcomplete``
 ====================
+.. image:: https://img.shields.io/pypi/v/auto-argcomplete.svg
 
 ``auto-argcomplete`` is automatic shell completion generator for script
 which uses argparse.
