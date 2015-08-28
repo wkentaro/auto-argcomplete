@@ -4,7 +4,7 @@ _auto_argcomplete () {
     files=$(compgen -f -- ${COMP_WORDS[COMP_CWORD]})
     COMPREPLY=( $(echo $files | xargs -n1 | grep '\.py$') )
   else
-    COMPREPLY=( $(auto_argcomplete ${COMP_WORDS[1]}) )
+    COMPREPLY=( $(auto_argcomplete --no-description ${COMP_WORDS[1]}) )
   fi
 }
 complete -F _auto_argcomplete -o filenames python
