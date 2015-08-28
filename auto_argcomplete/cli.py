@@ -46,7 +46,7 @@ def main():
         elif arg.short:
             opt = arg.short
         desc = arg.description
-        if show_desc and desc:
+        if args.show_desc and desc:
             opt_descs.append("'{opt}:{desc}'".format(opt=opt, desc=desc))
         else:
             opt_descs.append("'{opt}'".format(opt=opt))
