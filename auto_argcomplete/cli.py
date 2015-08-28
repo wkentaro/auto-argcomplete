@@ -16,12 +16,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('filename', help='python filename')
     parser.add_argument('--description', help='show description',
-                        action='store_true', dest='show_desc')
+                        default=True, action='store_true', dest='show_desc')
     parser.add_argument('--no-description', help='not show description',
-                        action='store_false', dest='show_desc')
+                        default=True, action='store_false', dest='show_desc')
     args = parser.parse_args()
 
     filename = os.path.expanduser(args.filename)
+    show_desc = args.show_desc
 
     # check the file imports argparse
     with open(filename, 'r') as f:
@@ -46,7 +47,7 @@ def main():
         elif arg.short:
             opt = arg.short
         desc = arg.description
-        if args.show_desc and desc:
+        if show_desc and desc:
             opt_descs.append("'{opt}:{desc}'".format(opt=opt, desc=desc))
         else:
             opt_descs.append("'{opt}'".format(opt=opt))
