@@ -5,6 +5,7 @@ from __future__ import print_function
 import os
 import sys
 import re
+import argparse
 import subprocess
 from subprocess import Popen, PIPE
 
@@ -12,12 +13,15 @@ from .packages.docopt import parse_defaults
 
 
 def main():
-    if len(sys.argv) > 1:
-        filename = sys.argv[1]
-    else:
-        sys.exit(1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filename', help='python filename')
+    parser.add_argument('--description', help='show description',
+                        action='store_true', dest='show_desc')
+    parser.add_argument('--no-description', help='not show description',
+                        action='store_false', dest='show_desc')
+    args = parser.parse_args()
 
-    filename = os.path.expanduser(filename)
+    filename = os.path.expanduser(args.filename)
 
     # check the file imports argparse
     with open(filename, 'r') as f:
@@ -42,7 +46,7 @@ def main():
         elif arg.short:
             opt = arg.short
         desc = arg.description
-        if desc:
+        if show_desc and desc:
             opt_descs.append("'{opt}:{desc}'".format(opt=opt, desc=desc))
         else:
             opt_descs.append("'{opt}'".format(opt=opt))
