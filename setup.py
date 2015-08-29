@@ -72,7 +72,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
     ],
     entry_points={'console_scripts':
-        ['auto_argcomplete=auto_argcomplete.cli:main']},
+        ['auto_argcomplete=auto_argcomplete.cli:cli']},
     data_files=get_data_files(),
     test_suite='nose.collector',
 )
