@@ -3,7 +3,9 @@ _auto_argcomplete () {
   if (( COMP_CWORD == 1 )); then
     COMPREPLY=( $(compgen -f -- ${COMP_WORDS[COMP_CWORD]}) )
   else
-    COMPREPLY=( $(auto_argcomplete --no-description --no-quote ${COMP_WORDS[1]}) )
+    if [[ ${COMP_WORDS[COMP_CWORD]} =~ ^-+ ]]; then
+      COMPREPLY=( $(auto_argcomplete options --no-desc --no-quote ${COMP_WORDS[1]}) )
+    fi
   fi
 }
 complete -F _auto_argcomplete -o filenames python
