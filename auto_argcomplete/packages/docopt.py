@@ -468,6 +468,28 @@ def parse_defaults(doc, section_name=None):
     return defaults
 
 
+class ArgumentInHelp(LeafPattern):
+    @classmethod
+    def parse(class_, source):
+        name = re.findall('(\S+)', source)[0]
+        value = re.findall('\[default: (.*)\]', source, flags=re.I)
+        return class_(name, value[0] if value else None)
+
+
+def parse_args(doc, section_name=None):
+    if section_name is None:
+        section_name = 'arguments:'
+
+    arguments = []
+    for s in parse_section(section_name, doc):
+        _, _, s = s.partition(':')
+        split = re.split('\n[ \t]+(\S+)', '\n' + s)[1:]
+        split = [s1 + s2 for s1, s2 in zip(split[::2], split[1::2])]
+        args = [ArgumentInHelp.parse(s) for s in split]
+        arguments.extend(args)
+    return arguments
+
+
 def parse_section(name, source):
     pattern = re.compile('^([^\n]*' + name + '[^\n]*\n?(?:[ \t].*?(?:\n|$))*)',
                          re.IGNORECASE | re.MULTILINE)
