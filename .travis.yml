@@ -1,18 +1,20 @@
+sudo: false
+
 language: python
-python:
-  - "2.7"
-# command to install dependencies
-before_install:
-  - pip install -r requirements.txt
+
+python: 2.7
+
 install:
-# develop seems to be required by travis since 02/2013
+  - pip install -r requirements.txt
   - python setup.py build develop
-  - sudo apt-get clean
-  - sudo pip install nose-cov coverage coveralls
+  - pip install nose coveralls
+
 script:
   - python -c 'import sys; print(sys.path)'
   - nosetests --with-coverage --cover-package=auto_argcomplete
-notifications:
-  email: false
+
 after_success:
   - coveralls
+
+notifications:
+  email: false
