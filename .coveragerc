@@ -1,8 +1,5 @@
-[run]
-omit =
-  auto_argcomplete.packages.docopt.py
-
 [report]
 omit =
+  */auto_argcomplete/packages/docopt.py
   */python?.?/*
   */site-packages/nose/*
