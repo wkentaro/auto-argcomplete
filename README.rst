@@ -1,7 +1,11 @@
 ====================
 ``auto-argcomplete``
 ====================
+
 .. image:: https://img.shields.io/pypi/v/auto-argcomplete.svg
+.. image:: https://coveralls.io/repos/wkentaro/auto-argcomplete/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/wkentaro/auto-argcomplete?branch=master
+
 
 ``auto-argcomplete`` is automatic shell completion generator for script
 which uses argparse.
